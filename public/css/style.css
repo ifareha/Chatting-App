@@ -1,0 +1,30 @@
+*{
+margin : 0;
+padding : 0;
+box-sizing : border-box;
+}
+html,body{
+height : 100%;
+width : 100%
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.incommingButtons{
+    animation-name: alternate;
+    animation-timing-function: ease-in-out;
+   animation-duration: 1.5s;
+   animation-iteration-count: infinite;
+}
+
+@keyframes alternate {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}

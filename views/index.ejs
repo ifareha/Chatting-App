@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="">
+    <div class="overlay   w-full   
+      h-full bg-zinc-200 z-50 absolute flex items-center justify-center">
+        <div class="bg-white shadow-lg h-[26vw] w-[32vw] max-sm:h-[65vw] max-sm:w-[80vw] p-5 flex gap-2 flex-col">
+            <div class="flex flex-col items- gap-2 ">
+                <span class="text-orange-500 w-full font-bold flex items-center justify-center max-sm:text-[8vw] text-[2.5vw] leading-none"> Welcome!</span> 
+                <h1 class="text-[1.8vw] font-bold max-sm:text-[5vw] leading-none">Chat App</h1>
+                <h1 class="text-[1.2vw] font-medium text-zinc-500  max-sm:text-[3vw]">Set you're name </h1>
+            </div>
+           
+            <div class="flex flex-col  bg-purple-00 items-start gap-4  max-sm:gap-2">
+                <input class="border-2 rounded py-2 px-3 w-[25vw] h-[2.5vw]  max-sm:w-[55vw]  max-sm:h-[7vw] outline-none" type="text" placeholder="Enter Your Name..">
+               
+                <button class="submit-btn py-2 px-3 text-[1vw] rounded text-white w-[5vw] h-[2.4vw] max-sm:mt-3  max-sm:text-[2.5vw]  max-sm:w-[12vw]  max-sm:h-[5vw] flex items-center justify-center text-[.9vw] bg-orange-600">
+                Submit
+             </button>
+               
+            </div>
+      
+        </div>
+    </div>
+    <div class="main w-full  overflow-hidden h-screen  flex px-3 max-sm:px-0 max-sm:py-0 py-2 gap-2">
+        <div class="left-part  max-sm:w-full">
+            <div class="nav w-[40vw] text-zinc-700 max-sm:w-full  max-sm:h-[10vw] rounded-lg h-[5vw] bg-zinc-200 shadow-inner flex items-center justify-between px-4">
+                <div class="text-zinc-700 rounded-lg flex max-sm:text-[4vw] items-center justify-center text-[1.2vw] font-bold">Chat App</div>
+               <h1 class="name-set text-[1.2vw] font-semibold max-sm:text-[3vw]">fareha</h1>
+               </div>
+              <h1 class="text-[2vw] font-bold text-zinc-500 px-5 py-2 max-sm:text-[4vw] max-sm:px-2 ">All Member's</h1>
+                    <div class="all-members w-[40vw] max-sm:w-full flex flex-col items-start gap-2">
+                       
+                    </div>
+        </div>
+        <div class="welcomeArea flex-1 max-sm:hidden   flex flex-col items-center justify-center relative transition-all ease duration-[0.2s] h-full bg-zinc-200">
+           
+            <div class="bg-gray-400 text-white p-4 rounded-lg shadow-md">
+                <h1 class="text-lg font-bold">Welcome to ChatApp!</h1>
+                <p class="mt-2">Connect with your friends and start chatting.</p>
+              </div>
+    
+        </div>
+      <div class="right-part max-sm:w-full hidden w-[55vw] bg-white border">
+        <div class="chat-box chat-box-1 relative  flex flex-col justify-between max-sm:pb-1 w-full h-full" data-user-id="123">
+                <div class="w-full py-3 h-[5vw] max-sm:h-[10vw] px-4 flex items-center justify-between bg-zinc-200 ">
+                    <div class="flex items-center gap-3">
+                        <div class="">
+                           <h2 class="username text-[1.5vw] font-semibold max-sm:text-[3.5vw]">farha</h2>
+                           <h4 class="typing text-[1vw] text-green-500 max-sm:text-[2vw]"></h4>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center justify-center rounded gap-3 bg-zinc-400 max-sm:w-[12vw] max-sm:h-[5vw] w-[6vw] h-[2.5vw] text-[1.7vw] text-white">
+                            <button id="video-call" class="text-[1vw] max-sm:text-[1.7vw] font-semibold">
+                               Video Call
+                            </button>
+
+                        </div>
+                        <h2 class="leave bg-red-600 text-white max-sm:text-[1.9vw] rounded py-1 cursor-pointer text-[1.2vw] px-2"><i class="ri-arrow-go-back-line"></i></h2>
+                        </div>
+                    </div>
+
+    
+            <div class="chat-messages w-full h-[78vh] bg--700 overflow-y-auto">
+    
+            </div>
+           
+            <form class="formSubmit bg-zinc-100 max-sm:h-[8vw] h-[3.5vw] rounded-md w-full px-2 border flex items-center space-x-4">
+                    <input type="text" class="send-input w-full bg-transparent outline-none h-full" placeholder="Type a message...">
+                    <button class="send-btn bg-orange-600 py-3 px-5 max-sm:py-2 max-sm:px-4 text-white rounded-md">Send</button>
+                </form>
+        
+                <div class="call-overlay h-full hidden w-full bg-black bg-opacity-[.5] absolute flex justify-center py-12 top-0">
+                    <div class="incommingButtons flex flex-col items-start gap-6 w-[23vw] h-[9vw] max-sm:h-[20vw] max-sm:w-[38vw] p-3 max-sm:p-2 max-sm:justify-between max-sm:gap-0 text-white bg-white rounded ">
+                       <div>
+                        <h3 class="incommingCall text-[1.3vw] text-black font-semibold tracking-wide max-sm:text-[3.5vw]">fareha</h3>
+                        <h3 class="text-[1vw] text-zinc-500 tracking-wide max-sm:text-[2.2vw]">Incomming Call</h3>
+                       </div>
+
+                       <div class="flex items-center gap-5">
+                        <button id="answer" class=" h-[2.5vw] w-[8vw] rounded-lg bg-red-600 max-sm:w-[14vw] max-sm:h-[5vw] max-sm:text-[3vw]">Answer</button>
+                        <button id="decline" class=" h-[2.5vw] w-[8vw] rounded-lg bg-green-700  max-sm:w-[14vw] max-sm:h-[5vw] max-sm:text-[3vw]">Decline</button>
+                       </div>
+                     
+                      </div>
+                </div>
+                <h2 class="callEndText hidden absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] max-sm:text-[4vw] text-white text-[1.8vw] font-semibold text-zinc-500">Call Ended</h2>
+
+    
+             
+            </div>
+     
+      </div>
+     
+    </div>
+    <div class="call-container overflow-hidden hidden absolute bottom-3 rounded-lg  z-50 w-full h-screen bg-black flex flex-col items-center  justify-between py-5">
+        <div class="video-container w-full h-full">
+            <video id="remoteVideo" class="w-full max-sm:h-full z-[111111] h-full hidden object-cover rounded-lg" autoplay></video>
+            <div class="h-[18vw] w-[15vw] overflow-hidden rounded-lg absolute bottom-11 right-[11%]">
+                <video class="h-[18vw] object-cover max-sm:h-[14vw]" id="localVideo" autoplay  ></video>
+            <div class="cameraOff-bg hidden h-full w-full absolute top-0 bg-zinc-900">
+                <img class=" object-cover absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]" src="/images/user.png" alt="">
+                <h3 class="text-[1.1vw] text-zinc-500 font-semibold absolute bottom-1 left-[50%] -translate-y-[1%] -translate-x-[50%]">Camera-Off</h3>
+            </div>  
+        </div>  
+        </div>
+      <div class="back bg-purple-100 max-sm:w-[10vw] max-sm:h-[3.5vw] max-sm:text-[2.2vw] font-medium absolute w-[4vw] flex items-center justify-center rounded-md cursor-pointer text-[1.2vw] left-5 top-6">
+        back
+      </div>
+      <div class="callDecline hidden absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]  flex items-center justify-center w-[20vw] h-[4vw] p-3">
+        <h3 class="text-[1.5vw] font-semibold tracking-wide text-zinc-500">Call was declined</h3>
+        </div>
+    <div class="controlers text-center text-white absolute bottom-5 left-[50%] -translate-x-[50%] -translate-y-[2%] flex items-center gap-10">
+     <div class="cameraButton bg-zinc-800 cursor-pointer py-2 px-4 rounded-full text-[1.5vw] max-sm:text-[3.5vw]">
+        <i id="cameraIcon" class="ri-video-on-fill"></i>
+     </div>
+     <div class="mutedButton bg-zinc-800 cursor-pointer py-2 px-4 rounded-full text-[1.4vw] max-sm:text-[3.5vw]">
+        <i id="muteIcon" class="ri-mic-fill"></i>
+     </div>
+     <div id="endCall" class="bg-red-500 py-3 cursor-pointer px-3 rounded-full text-[1.4vw]">
+        <svg class="rotate-[140deg] max-sm:w-[4vw] max-sm:h-[4vw]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="2vw" height="2vw">
+            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.5 2.54.78 3.95.78a1 1 0 011 1V20c0 .55-.45 1-1 1A16.92 16.92 0 013 6c0-.55.45-1 1-1h2.25a1 1 0 011 1c0 1.41.28 2.74.78 3.95a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+          </svg>
+          
+     </div>
+    </div>
+</div>
+
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+
+<script src="/js/script.js"></script>
+</body>
+</html>
