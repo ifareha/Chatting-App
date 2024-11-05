@@ -22,7 +22,7 @@ var IncommingCall = document.querySelector(".call-overlay")
 var incomCallName = document.querySelector(".incommingCall")
 var answer = document.querySelector("#answer")
 var decline = document.querySelector("#decline")
-var  back = document.querySelector(".back")
+var back = document.querySelector(".back")
 var callDecline = document.querySelector(".callDecline")
 var controlers =  document.querySelector(".controlers")
 var callEndText =  document.querySelector(".callEndText")
@@ -100,8 +100,10 @@ input.addEventListener("input", function(){
 
 let timer;
 
-socket.on("typing", function(name){
+socket.on("typing", function({name}){
      typing.textContent = `${name.name} is typing..`;
+    
+     
      
 clearTimeout(timer);
 timer = setTimeout(function(){
