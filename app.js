@@ -157,6 +157,6 @@ app.get('/chat', (req, res) => {
     res.render('chat');
 });
 
-server.listen(5000, () => {
-    console.log('Server is running on port 5000');
+server.listen(1000, () => {
+    console.log('Server is running on port 1000');
 });
